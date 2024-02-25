@@ -27,8 +27,20 @@ It is composed of:
         
         - the adress of the node to the left of it (will point to nullptr if there are no nodes to the left of it)
 
-- *binary_search_tree.h*: 
+        
 
-- binary_search_tree.cpp
+- *binary_search_tree.h*: this file will define what the BinarySearchTree class is. It will privately initialze the initial node of the tree and the tree itself, and it will define all functions that will be under the class. These functions are:
 
-- main.cpp
+        - Add (an integer value) -> Return nothing;
+  
+        - Remove (an integer value) -> Return the value if it was successfully removed otherwise return an error message;
+  
+        - Search (an integer value) -> Retunr true or false;
+
+        - Print_in_order_traversal(no input needed) -> return all the numbers in the binary tree in order traversal.
+
+
+
+- *binary_search_tree.cpp*:
+
+- *main.cpp*:
