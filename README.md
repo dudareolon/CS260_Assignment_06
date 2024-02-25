@@ -45,6 +45,11 @@ This is a visual example of what a binary tree is spposed to look like:
 
 Being that on the class definition we are going to start by deifining the circle with the number 40 to be the ROOT of the tree, since it will always be the first comparision done in the tree and since it is the highest one in order. 
 
-- *binary_search_tree.cpp*:
+
+- *binary_search_tree.cpp*: This is the file where the actual code for each one of the functions will be done. The first step of this file is to create a binary tree under the class defined in the binary_search_tree.h file and make sure that the root of the tree is initially pointing to nullptr (meaning the tree is empty).
+
+- 
+
+  
 
 - *main.cpp*:
