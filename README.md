@@ -57,8 +57,8 @@ The functions defined in this file are:
 
 - voide add(int new_value); // add function that takes a new input and returns nothing
 
-  The add function
-
+  The add function will initially check if the tree is empty, by checking if the root is pointing to nullptr. If it is then it will store the new value in the root poition.
+  If the tree is not empty then it will compare the new value to the value that is in the root, if the new value is bigger than the value in the root then we will update the pointer to point to the address on the right of the root, if it is smaller or equal to the value in the root then the pointer will be updated to point to the left adress of the root.  
   
 - int remove(int old_value); // remove function that takes in an old input and returns this old input
 
