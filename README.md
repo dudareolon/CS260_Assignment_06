@@ -84,7 +84,11 @@ The functions defined in this file are:
 
 ![image](https://github.com/dudareolon/CS260_Assignment_06/assets/102680672/a868d7a4-7c63-4e61-a6f3-266c7a3b4771)
   
-  This function will turn the binary tree into a string list of all of the numbers in the tree in order from smaller to bigger.
+  This function will turn the binary tree into a string list of all of the numbers in the tree in order from smaller to bigger. It is an in order traverse which means the code will go in the order left, visit, right, which means it will first check what is in the left address of the node, if there is something in the left it will keep checking until it gets to the leftmost node, then it visits the node, which means it prints its value, and then it checks the right side of that node, if there is nothing on the right node then it goes back up one level and visits on the node up a level. The picture below can beter explain how this works:
+
+  ![image](https://github.com/dudareolon/CS260_Assignment_06/assets/102680672/c2454c93-883f-49ad-abbe-705f15edaa58)
+  
+The in order is indicated by the green dots.  
   
 ............................................................................................................................................................................................................
 
