@@ -15,6 +15,8 @@ Design:
 
 There will be 4 files in my program:
 
+..................................................................................................................................................................
+
 - *binary_node.h*: this file will contain the structure that will define what are the properties of each node in the binary search tree. This is a binary node:
 
   ![image](https://github.com/dudareolon/CS260_Assignment_06/assets/102680672/f524f40a-0bd9-40d7-9630-c13b9757ab36)
@@ -48,7 +50,18 @@ Being that on the class definition we are going to start by deifining the circle
 
 - *binary_search_tree.cpp*: This is the file where the actual code for each one of the functions will be done. The first step of this file is to create a binary tree under the class defined in the binary_search_tree.h file and make sure that the root of the tree is initially pointing to nullptr (meaning the tree is empty).
 
-- 
+The functions defined in this file are:
+
+- voide add(int new_value); // add function that takes a new input and returns nothing
+
+  The add function
+
+  
+- int remove(int old_value); // remove function that takes in an old input and returns this old input
+
+- bool search(int value); // search function that finds the input value and returns if it is true or not that value is in the tree
+
+- void print_in_order_traversal(); // prints out all the values of the tree in order traversal
 
   
 
