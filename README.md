@@ -88,7 +88,7 @@ The functions defined in this file are:
 
   ![image](https://github.com/dudareolon/CS260_Assignment_06/assets/102680672/c2454c93-883f-49ad-abbe-705f15edaa58)
   
-The in order is indicated by the green dots.  
+The in order is indicated by the green dots. It repeats the same process of left, visit, right until all the nodes in the tree are visited and printed out, this version of traversing through the list outputs a numerical ascending list. 
   
 ............................................................................................................................................................................................................
 
