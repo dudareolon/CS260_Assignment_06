@@ -41,10 +41,9 @@ It is composed of:
 
 This is a visual example of what a binary tree is spposed to look like:
 
-![image](https://github.com/dudareolon/CS260_Assignment_06/assets/102680672/867fdf5e-0c96-429f-80c5-fc3b7254e1d9)
+![image](https://github.com/dudareolon/CS260_Assignment_06/assets/102680672/0124acf4-2612-49b6-bf27-b68db5ae731b)
 
-
-Being that on the class definition we are going to start by deifining the circle with the number 20 to be the ROOT of the tree, since it will always be the first comparision done in the tree and since it is the highest one in order. 
+Being that on the class definition we are going to start by deifining the circle with the number 40 to be the ROOT of the tree, since it will always be the first comparision done in the tree and since it is the highest one in order. 
 
 - *binary_search_tree.cpp*:
 
