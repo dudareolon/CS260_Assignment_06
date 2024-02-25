@@ -1,4 +1,3 @@
-
 struct BinaryNode
 // this struct defines what the binary node is
 {
