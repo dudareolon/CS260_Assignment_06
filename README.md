@@ -55,17 +55,36 @@ Being that on the class definition we are going to start by deifining the circle
 
 The functions defined in this file are:
 
-- voide add(int new_value); // add function that takes a new input and returns nothing
+- void add(int new_value); // add function that takes a new input and returns nothing
 
-  The add function will initially check if the tree is empty, by checking if the root is pointing to nullptr. If it is then it will store the new value in the root poition.
-  If the tree is not empty then it will compare the new value to the value that is in the root, if the new value is bigger than the value in the root then we will update the pointer to point to the address on the right of the root, if it is smaller or equal to the value in the root then the pointer will be updated to point to the left adress of the root.  
+  The first step of the add function is to create a new node for the new value that will be added. 
+
+  Then the add function will check if the tree is empty, by checking if the root is pointing to nullptr. If it is then it will store the new value in the root poition.
+
+   If the tree is not empty then it will compare the new value to the value that is in the root, if the new value is bigger than the value in the root then we will update the pointer to point to the address on the right of the root, if it is smaller or equal to the value in the root then the pointer will be updated to point to the left adress of the root.
+
+  Now that the iteration pointer is pointing to a node on the second level and not to the root anymore, we will compare the new value to the value in the new node we are analyzing. Again, if the new value is smaller or equal to the value in the node we are analyzing, the iteration pointer will update to pointing to the left address stored in that binary node. The same way if the new value is bigger then the pointer will update to the right address of the node we are anlysizing.
+
+   The code will stay repeating this system until it finds that the left or right address of the node it is analysizing is pointing to nullptr, and that will be where the new value must be inserted. To do that we will simply update the node we are analysizing left or right (depends on the case) pointer to point to the new node wse created.
+
+  
   
 - int remove(int old_value); // remove function that takes in an old input and returns this old input
 
+  
+
 - bool search(int value); // search function that finds the input value and returns if it is true or not that value is in the tree
+
+    This function will do the same thing as the add function, but it won't create a new node for the input value at the beginning and when it gets to nullptr it won't insert a new node, it will simply display that the input value was not found and return false. For this function also besides comparing if the inserted value is bigger or smaller it will also look if they are the same, because if they are the same then the system will return true.
+
 
 - void print_in_order_traversal(); // prints out all the values of the tree in order traversal
 
+  This function will make what is in the picture below happen:
+
+![image](https://github.com/dudareolon/CS260_Assignment_06/assets/102680672/a868d7a4-7c63-4e61-a6f3-266c7a3b4771)
+  
+  This function will turn the binary tree into a string list of all of the numbers in the tree in order from smaller to bigger.
   
 ............................................................................................................................................................................................................
 
