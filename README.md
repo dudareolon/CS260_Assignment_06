@@ -67,15 +67,30 @@ The functions defined in this file are:
 
    The code will stay repeating this system until it finds that the left or right address of the node it is analysizing is pointing to nullptr, and that will be where the new value must be inserted. To do that we will simply update the node we are analysizing left or right (depends on the case) pointer to point to the new node wse created.
 
-  
-  
-- int remove(int old_value); // remove function that takes in an old input and returns this old input
+
+:)  
 
   
+- int remove(int old_value); // remove function that takes in an old input and returns this old input
+  This function starts by creating two pointers. One that will iterate until finding the value we want to remove (will be started pointing at the root) and another pointer that will iterate until finding the parent node of the node we want to remove (will be started at nullptr). Now we have an iteration pointer and a parent of iteration pointer.
+  Then we will search for the node to be removed and keep track of its parent by using a while loop. If the value we are looking for is smaller than the value of the node we are looking at, then we will move to the left address of the binary node we are looking at. If it bigger then we will look at the right address. If it is equal we will exit out of the loop.
+  At this point of the code we already have the correct address for the iteration pointer (value we want to remove) and for the parent of the iteration pointer (parent node of the value we want to remove)
+  If the value is not found (if iteration pointer is equal to nullptr which means it reached the end of the binary search tree), then an error message will display and return -1.
+
+  Now there are two possible cases of what could be happening
+      - Case 1: Either the left or the right pointer of the node we want to remove is nullptr (meaning that the node has no or has only one child node). If the node has no child, then just make its parent node right or left address (depending where the removed node is at) be pointing to nullptr. If the node has one child, store the child in a temporary pointer, and go to the parent of the node we want to remove, find if the node is on the right or left of its parent, and make the parent point to the removed node child. In other words, make the grandparent point to its grandchild because the parent was removed. 
+      - Case 2: Both right and left pointer address of the node we want to remove are pointing to another node (meaning it has two children nodes).
+  
+  
+:)
+
 
 - bool search(int value); // search function that finds the input value and returns if it is true or not that value is in the tree
 
     This function will do the same thing as the add function, but it won't create a new node for the input value at the beginning and when it gets to nullptr it won't insert a new node, it will simply display that the input value was not found and return false. For this function also besides comparing if the inserted value is bigger or smaller it will also look if they are the same, because if they are the same then the system will return true.
+
+
+:)
 
 
 - void print_in_order_traversal(); // prints out all the values of the tree in order traversal
