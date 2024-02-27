@@ -72,6 +72,7 @@ bool BinarySearchTree::search(int value){
     return result;
 }
 
+// This function removes a value from the tree and relocates the other nodes in the tree to the correct location
 int BinarySearchTree::remove(int old_value) {
     BinaryNode* parent = nullptr;
     BinaryNode* current = root;
@@ -138,11 +139,10 @@ int BinarySearchTree::remove(int old_value) {
     return 0;
 }
 
-
+// Both functions below work together to print out the tree in order traversal from smaller to bigger number 
 void BinarySearchTree::in_order_traversal() {
     in_order_traversal_helper(root);
 }
-
 void BinarySearchTree::in_order_traversal_helper(BinaryNode *current) {
     if(current != nullptr) {
         // go left
