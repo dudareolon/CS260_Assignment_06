@@ -1,6 +1,6 @@
 #include <iostream>
 
-#include "binary_search_tree.h"
+#include "binary_search_tree.cpp"
 
 using std::cout;
 using std::endl;
