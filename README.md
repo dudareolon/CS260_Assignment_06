@@ -131,6 +131,12 @@ The in order is indicated by the green dots. It repeats the same process of left
 
 Complexity Analyzis:
 
+I did the complexity analysis for each one of the functions in my code separately, as each one of them has its special and unique cases.
+
+ - for the add: in the best of the cases the tree would be empty and the new node would be added to the root of the tree, in this case we would have O(1). In the worst cases the the node will be inserted in the furthest locatin from the root and the big O notation will be O(n) being that n will be how many layers there is on the tree.
+ - for the search: acts the same way as the add, the only difference is that it might do one more step than the add, this extra step is going to nullptr instead of stopping at the fursthers node from the root of the tree.
+ - for the remove: the best case scenarion is also a O(1) which is when the node to be removed has no children or only one children. The worst case scenario is O(n) which is when you have to find the successor of the node to be removed and the successor is the furthest away possible.
+ - for in order traversal and in order traversal helper: will always be O(n) but n in this case is the amount of nodes in the tree since it has to go node by node analyzing each situation.
 
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
