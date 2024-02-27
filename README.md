@@ -125,4 +125,43 @@ The in order is indicated by the green dots. It repeats the same process of left
 - Remove a number in the tree
 - Try to search for the number that was removed from the tree
 - Remove a number that the successor has a node to the right of it
-- Remove a number whose succesor is to the right of it 
+- Remove a number whose succesor is to the right of it
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Complexity Analyzis:
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Requirements:
+
+1. nodes to store values:
+
+![image](https://github.com/dudareolon/CS260_Assignment_06/assets/102680672/68e4c75b-890d-49dc-be5f-16df77156d56)
+
+
+2. an add function that adds a new value in the appropriate location based on our ordering rules:
+
+![image](https://github.com/dudareolon/CS260_Assignment_06/assets/102680672/961af8ea-ab51-4edf-81a8-2d5c51ef67b1)
+
+
+3. a remove function that finds and removes a value and then picks an appropriate replacement node:
+
+![image](https://github.com/dudareolon/CS260_Assignment_06/assets/102680672/80e9bee9-4d8f-4474-a71e-ea4552c606cd)
+
+
+![image](https://github.com/dudareolon/CS260_Assignment_06/assets/102680672/8d1e712b-0ab2-4ffa-82ed-15401936c37d)
+
+
+![image](https://github.com/dudareolon/CS260_Assignment_06/assets/102680672/4ecb6699-6043-4aa0-9baf-85f335cfc0c4)
+
+
+4. at least one tree traversal function:
+
+![image](https://github.com/dudareolon/CS260_Assignment_06/assets/102680672/03f7930d-531f-4204-bd90-dbf24fe901de)
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
