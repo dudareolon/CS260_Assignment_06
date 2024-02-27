@@ -86,8 +86,10 @@ The functions defined in this file are:
 ![image](https://github.com/dudareolon/CS260_Assignment_06/assets/102680672/87044e25-c0ca-4539-b071-bb1014c07e39)
 
       
+For this case we are going to have to create two new poitners, one that is the successor and one that is the parent of the successor. The parent of the successor is the current node we are going to remove and the successor is started to being the node to the right of the successor parent. But that is not the successor itself. The successor node is the node with the smallest value in the right subtree of the current node. So we will have to traverse to the right child of the current node and then iterates down the left children of that node until it reaches the leftmost node, which is the successor.
 
-  
+Once the successor is found, its value is copied to the current node to replace it. This maintains the property of the binary search tree where all nodes to the left of a node have values less than it, and all nodes to the right have values greater than it. Then we need to account if the successor was found right to the right of the initial node we wnated to remove, which then would just mean we want the successor parent or in this case would be the current node we are looking at to point to the right of the successor. We also wamt to account if even though the successor points to nullptr on its left, there might still be a node on its right, to do this we take the node that would be to the right of the successor and make it the left side of the successor parent, since it is the only thing left on the left branch of the successor parent. 
+ 
   
 :)
 
