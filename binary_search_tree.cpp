@@ -74,12 +74,20 @@ bool BinarySearchTree::search(int value){
 
 // This function removes a value from the tree and relocates the other nodes in the tree to the correct location
 int BinarySearchTree::remove(int old_value) {
+    // The same way as in the add function we need to create two pointers. One pointer for the iteration that we will do through the list (current) 
+    // and another pointer to store the parent node of the iteration node (parent)
     BinaryNode* parent = nullptr;
     BinaryNode* current = root;
 
     // Search for the node to be removed and keep track of its parent
+    // The search will continue until it reaches the end of the tree (when current is nullptr)
+    // or until the value of the node we are analyzing is the value we want to remove from the tree 
     while (current != nullptr && current->value != old_value) {
+
+        // the parent pointer needs to be updated to the current pointer in order for the iteration to proceed
         parent = current;
+
+        // the current pointer needs to be updated to its right value if the value we are looking for is bigger, or to its left value if the number we are looking for is smaller
         if (old_value < current->value) {
             current = current->left;
         } else {
@@ -88,19 +96,29 @@ int BinarySearchTree::remove(int old_value) {
     }
 
     // If the value is not found, return -1
-    if (current == nullptr) {
+    if (current == nullptr) { // reaches the end of the tree
         cout << "the number entered is not in the tree" << endl;
         return -1;
     }
 
+    // At this point we know what the node that needs to be removed is (stored in current)
+    // And what the father of this node is and that needs to have one of its addresses updated (stored in parent)
+
     // Case 1: Node to be removed has no children or one child
-    if (current->left == nullptr || current->right == nullptr) {
+    if (current->left == nullptr || current->right == nullptr) { 
+
+        // create a new pointer called temp (short for temporary) to store the node we will need to move around until it is ready to go to its designated slot
         BinaryNode* temp = nullptr;
-        if (current->left != nullptr){
+
+        // in the case of one child from the current node:
+        // if the value that will be removed has a child to its left, then the child node value will be stored in temp
+        if (current->left != nullptr){ 
             temp = current->left;
-        } else if (current -> right != nullptr) {
+        } else if (current -> right != nullptr) { // the same will happen if the child of the node to be removed is in the right of it
             temp = current->right;
         } else {
+            // this accounts for the case in which the node that needs to be removed has no kids
+            // which would make the parent node either to the left or the right point to nullptr
             if (parent->left == current){
                 parent->left = nullptr;
             } else if (parent->right == current){
@@ -108,23 +126,31 @@ int BinarySearchTree::remove(int old_value) {
             }
         }      
 
+        // in the cases where there is one child, it will assign the child either to the right or to the left of its grandchild, as the parent node will be removed
         if (parent->left == current) {
             parent->left = temp;
         } else {
             parent->right = temp;
         }
-        delete current;
     }
-    // Case 3: Node to be removed has two children
+    // Case 2: Node to be removed has two children
     else {
+
+        // Two new pointers need to be created
+        // one for the successor which is the node with the smallest value in the right subtree of the current node. 
+        // the other for the successor parent, so the node that holds the address of the successor node
         BinaryNode* successorParent = current;
         BinaryNode* successor = current->right;
+
+        // iterate through the entire tree to find the successor and the successor parent of the current node (node to be removed)
         while (successor->left != nullptr) {
             successorParent = successor;
             successor = successor->left;
         }
+        // the current value is replaced to being its successor value
         current->value = successor->value;
 
+        // this takes into consideration that the successor might not be stored in the left address of its parent, because it might be the first value to the right of the current node
        if (successorParent == current) {
             current->right = successor->right;
         } else {
@@ -133,8 +159,6 @@ int BinarySearchTree::remove(int old_value) {
             // since it is the only thing left on the left branch of the successor parent
             successorParent->left = successor->right;
         }
-
-        delete successor;
     }
     return 0;
 }
