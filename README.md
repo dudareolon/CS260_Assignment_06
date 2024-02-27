@@ -78,8 +78,15 @@ The functions defined in this file are:
   If the value is not found (if iteration pointer is equal to nullptr which means it reached the end of the binary search tree), then an error message will display and return -1.
 
   Now there are two possible cases of what could be happening
-      - Case 1: Either the left or the right pointer of the node we want to remove is nullptr (meaning that the node has no or has only one child node). If the node has no child, then just make its parent node right or left address (depending where the removed node is at) be pointing to nullptr. If the node has one child, store the child in a temporary pointer, and go to the parent of the node we want to remove, find if the node is on the right or left of its parent, and make the parent point to the removed node child. In other words, make the grandparent point to its grandchild because the parent was removed. 
-      - Case 2: Both right and left pointer address of the node we want to remove are pointing to another node (meaning it has two children nodes).
+
+   - Case 1: Either the left or the right pointer of the node we want to remove is nullptr (meaning that the node has no or has only one child node). If the node has no child, then just make its parent node right or left address (depending where the removed node is at) be pointing to nullptr. If the node has one child, store the child in a temporary pointer, and go to the parent of the node we want to remove, find if the node is on the right or left of its parent, and make the parent point to the removed node child. In other words, make the grandparent point to its grandchild because the parent was removed. 
+  
+    - Case 2: Both right and left pointer address of the node we want to remove are pointing to another node (meaning it has two children nodes). For this we are going to have to use the successor concept. Inorder Successor of an input node can also be defined as the node with the smallest key greater than the key of the input node. So, it is sometimes important to find next node in sorted order. In the picture below we can see that the inorder successor of 8 is 10, inorder successor of 10 is 12 and inorder successor of 14 is 20.
+ 
+![image](https://github.com/dudareolon/CS260_Assignment_06/assets/102680672/87044e25-c0ca-4539-b071-bb1014c07e39)
+
+      
+
   
   
 :)
