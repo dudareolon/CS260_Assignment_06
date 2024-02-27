@@ -116,4 +116,13 @@ The in order is indicated by the green dots. It repeats the same process of left
   
 ............................................................................................................................................................................................................
 
-*main.cpp*:
+*main.cpp*: This file is where all the testing of this code will happen. The tests I want to do are:
+- Remove a number when there are no numbers in the tree
+- Add numbers to the tree
+- Add a duplicate number
+- Display the tree numbers in order traversal (Ascending)
+- Search for a number in the tree
+- Remove a number in the tree
+- Try to search for the number that was removed from the tree
+- Remove a number that the successor has a node to the right of it
+- Remove a number whose succesor is to the right of it 
