@@ -10,6 +10,7 @@ BinarySearchTree::BinarySearchTree() {
     root = nullptr; // initializes the tree empty by setting the root to nullptr
 }
 
+// This function adds a node in the tree at the correct location
 void BinarySearchTree::add(int new_value) {
     // create a new node that takes in the new_value but its right and left pointer are to nothing
     BinaryNode *new_node = new BinaryNode{new_value, nullptr, nullptr};
@@ -46,6 +47,8 @@ void BinarySearchTree::add(int new_value) {
     }
 }
 
+
+// This function searches if a value is present (returns 1) or not (returns 0) in the tree without removing the value
 bool BinarySearchTree::search(int value){
     // result with a safe default value
     bool result = false;
