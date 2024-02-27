@@ -11,26 +11,34 @@ BinarySearchTree::BinarySearchTree() {
 }
 
 void BinarySearchTree::add(int new_value) {
-    // create new node
+    // create a new node that takes in the new_value but its right and left pointer are to nothing
     BinaryNode *new_node = new BinaryNode{new_value, nullptr, nullptr};
 
+    // if the tree is empty
     if(root == nullptr) {
         // assign root to that node
-        root = new_node;
+        root = new_node; // new node because the top of the tree and the only node currently at the tree
     } else {
-        // find where it goes
-        BinaryNode *current = root;
-        BinaryNode *parent = nullptr;
+        // will need to create two pointers
+        // a current pointer that stores the address of the node we are analyzing during the iteration through the tree
+        // a parent pointer which indicates the address of the parent node of the node we are analyzing 
+        BinaryNode *current = root; // start iteration at the beginning of the tree
+        BinaryNode *parent = nullptr; // start the parent pointer one step behind the current pointer
+
+        // repeat the while loop until the current pointer reaches the end of the tree, aka nullptr
         while(current != nullptr) {
-            parent = current;
-            if(new_value < current->value) {
+            parent = current; // update the parent pointer to the next step which will be the current node we are analyzing
+
+            // decide if we need to go to the right or to the left of the node we are analyzing
+            // if the value we want to add is smaller or equal to the value we are analyzing then make it go to the left 
+            if(new_value <= current->value) {
                 current = current->left;
-            } else {
+            } else { // if the value we want to add is bigger than make it go to the right of the node we are analyzing
                 current = current->right;
             }
         }
-        // update parent pointer
-        if(new_value < parent->value) {
+        // with the same rules of going to the left or to the right we will update the parent pointer so new node is fully inserted in the tree
+        if(new_value <= parent->value) {
             parent->left = new_node;
         } else {
             parent->right = new_node;
